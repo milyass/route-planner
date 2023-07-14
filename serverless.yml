@@ -1,0 +1,16 @@
+service: my-service
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  memorySize: 2048
+  stage: dev
+  timeout: 20
+  region: us-east-1
+
+functions:
+  getRoutePlan:
+    handler: handler.getRoutePlan
+    events:
+      - http: ANY /{proxy+}
+      - http: ANY /
