@@ -17,16 +17,20 @@ const calculateCO2EmissionsAndTotalDistance = (itinerary) => {
       itineraryLegs: [],
       totalDistance: 0,
     };
-  itinerary.legs.forEach((leg) => {
+    itinerary.legs = itinerary.legs.map((leg) => {
     if (leg.mode in constants.co2Multipliers) {
       const distanceInKm = leg.distance / 1000; // km
       const co2Multiplier = constants.co2Multipliers[leg.mode]; // for example constants.co2Multipliers['CAR'] which is 160
       const currentLegCO2 = distanceInKm * co2Multiplier; // 90km * 160
-      leg.co2 = currentLegCO2; // append the co2 emission to the leg
       totalCO2 += currentLegCO2; // add to the total co2 emissions
       totalDistance += distanceInKm; // add to the total distance
+      return {
+        mode: leg.mode, 
+        distance: distanceInKm, 
+        co2: currentLegCO2
+      }
     }
-  });
+  })
   return { totalCO2, itineraryLegs: itinerary.legs, totalDistance };
 };
 
