@@ -6,6 +6,10 @@ expect.extend(matchers);
 describe('Serverless Handler', () => {
   
   it('GET [/route-plan] should return the expected response', async () => {
+    const currentDate = new Date();
+    const month = currentDate.getMonth() + 1 // we add one because its zero based
+    const year = currentDate.getFullYear()
+    const day = currentDate.getDate()
     const event = {
       httpMethod: 'GET',
       path: '/route-plan',
@@ -13,7 +17,7 @@ describe('Serverless Handler', () => {
         fromPlace: '60.148156622692035,24.987887975719225',
         toPlace: '60.19461994799159,24.870836734771732',
         time: '8:40am',
-        date: '07-21-2023',
+        date: `${month}-${day}-${year}`,
         mode: 'TRANSIT',
       },
     };
@@ -27,6 +31,10 @@ describe('Serverless Handler', () => {
   });
 
   it('GET [/route-plan] the response should match json schema', async () => {
+    const currentDate = new Date();
+    const month = currentDate.getMonth() + 1 
+    const year = currentDate.getFullYear();
+    const day = currentDate.getDate();
     const event = {
       httpMethod: 'GET',
       path: '/route-plan',
@@ -34,7 +42,7 @@ describe('Serverless Handler', () => {
         fromPlace: '60.148156622692035,24.987887975719225',
         toPlace: '60.19461994799159,24.870836734771732',
         time: '8:40am',
-        date: '07-21-2023',
+        date: `${month}-${day}-${year}`,
         mode: 'TRANSIT',
       },
     };
