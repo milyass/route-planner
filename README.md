@@ -32,12 +32,14 @@ The assignment is to create a serverless REST API that fetches a route plan base
     - or using AWS CLI after installing it by following the instructions in the AWS CLI documentation 
     (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
     <br>
-    `aws configure`<br>
-    `AWS Access Key ID [None]:  <YOUR_AWS_ACCESS_KEY>`<br>
-    `AWS Secret Access Key [None]: <YOUR_AWS_SECRET_KEY>`<br>
-    `Default region name [None]: <REGION>`<br>
-    `Default output format [None]: ENTER`<br>
-    - run `cat ~/.aws/credentials` to make sure credentials are good.
+    - `aws configure`<br>
+    - `AWS Access Key ID [None]:  <YOUR_AWS_ACCESS_KEY>`<br>
+    - `AWS Secret Access Key [None]: <YOUR_AWS_SECRET_KEY>`<br>
+    - `Default region name [None]: <REGION>`<br>
+    - `Default output format [None]: ENTER`<br>
+    - run this command to make sure credentials are good.
+    - `cat ~/.aws/credentials`
+    
 
 - run:
     - `npm install`
