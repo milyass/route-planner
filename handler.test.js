@@ -1,15 +1,14 @@
 const { getRoutePlan } = require('./handler');
 const { matchers } = require('jest-json-schema');
-const { responseSchema } = require('./constants'); 
+const { responseSchema } = require('./constants');
 expect.extend(matchers);
 
 describe('Serverless Handler', () => {
-  
   it('GET [/route-plan] should return the expected response', async () => {
     const currentDate = new Date();
-    const month = currentDate.getMonth() + 1 // we add one because its zero based
-    const year = currentDate.getFullYear()
-    const day = currentDate.getDate()
+    const month = currentDate.getMonth() + 1; // we add one because its zero based
+    const year = currentDate.getFullYear();
+    const day = currentDate.getDate();
     const event = {
       httpMethod: 'GET',
       path: '/route-plan',
@@ -32,7 +31,7 @@ describe('Serverless Handler', () => {
 
   it('GET [/route-plan] the response should match json schema', async () => {
     const currentDate = new Date();
-    const month = currentDate.getMonth() + 1 
+    const month = currentDate.getMonth() + 1;
     const year = currentDate.getFullYear();
     const day = currentDate.getDate();
     const event = {
@@ -59,9 +58,7 @@ describe('Serverless Handler', () => {
     const event = {
       httpMethod: 'GET',
       path: '/route-plan',
-      queryStringParameters: {
-      
-      },
+      queryStringParameters: {},
     };
     const context = {};
     const response = await getRoutePlan(event, context);
@@ -84,4 +81,3 @@ describe('Serverless Handler', () => {
     expect(responseBody).toHaveProperty('error');
   });
 });
-

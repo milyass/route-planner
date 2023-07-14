@@ -1,5 +1,5 @@
 'use strict';
-const app = require("./app")
-const serverless = require("serverless-http")
+const app = require('./app');
+const serverless = require('serverless-http');
 
-module.exports.getRoutePlan = serverless(app)
+module.exports.getRoutePlan = serverless(app);
