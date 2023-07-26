@@ -55,10 +55,5 @@ The assignment is to create a serverless REST API that fetches a route plan base
     - ✓ GET [/route-plan] should return the expected response 400 
     - ✓ GET [/route-plan] should return the expected response 404
 
-## To Test Result: 
-- The Api is Deployed and can be accessed here __https://lydwa6jmn8.execute-api.us-east-1.amazonaws.com/dev/route-plan__
-- **Demo Request** 
-__https://lydwa6jmn8.execute-api.us-east-1.amazonaws.com/dev/route-plan?fromPlace=60.148156622692035,24.987887975719225&toPlace=60.19461994799159,24.870836734771732&time=8:40am&date=07-13-2023&mode=TRANSIT__
- 
 ## Notes
 - ESLint is Configured to **syntax** and **commonjs**.
